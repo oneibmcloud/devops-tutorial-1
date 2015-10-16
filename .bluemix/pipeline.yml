@@ -147,7 +147,7 @@ stages:
           then
             echo 'Speed Curve API Key is empty!'
           else
-            curl "https://api.speedcurve.com/v1/deploy" -u ${SPEED_CURVE_API_KEY}:x --request POST --data note=${CF_APP}-${BUILD_NUMBER}
+            curl "https://api.speedcurve.com/v1/deploy" -u ${SPEED_CURVE_API_KEY}:x --request POST --data note=${APP_NAME}
           fi
       - name: New Relic
         type: builder
