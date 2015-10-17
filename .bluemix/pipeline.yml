@@ -166,7 +166,7 @@ stages:
         type: tester
         script: |-
           #!/bin/bash
-          if [[ ${SAUCE_USERNAME} == '' || ${SAUCE_ACCESS_KEY} == '' || ${APP_URL} == '' ]];
+          if [[ ${SAUCE_USERNAME} == '' || ${SAUCE_ACCESS_KEY} == '' || ${APP_NAME} == '' ]];
           then
             echo 'App Test URL, Sauce Labs Username and/or Access Key is empty!'
           else
