@@ -4,7 +4,7 @@
 
 To start working from a DevOps approach, use the DevOps Tutorial Application project. You'll get a project in [IBM&reg; Bluemix&trade; DevOps Services](https://hub.jazz.net) that is built by using the latest tools, deployed to [IBM Bluemix](https://bluemix.net), and has the foundation for test, scalability, and operations.
 
-The application is a simple Node.js [Express 4](http://expressjs.com/) sample that you can extend. This sample code is used in a [tutorial] https://www.ibm.com/devops/method/tutorials/tutorial_cloud_native) that explains how to configure a toolchain to use for development of cloud native applications in IBM DevOps Services and IBM Bluemix.
+The application is a simple Node.js [Express 4](http://expressjs.com/) sample that you can extend. This sample code is used in a [tutorial] (https://www.ibm.com/devops/method/tutorials/tutorial_cloud_native) that explains how to configure a toolchain to use for development of cloud native applications in IBM DevOps Services and IBM Bluemix.
 
 To set up and run certain stages of the pipeline, you might need to register for other tools or services. The tutorial guides you through those details.
 
