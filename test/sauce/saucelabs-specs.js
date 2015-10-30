@@ -79,40 +79,38 @@ describe('tutorial (' + desired.browserName + ')', function() {
       .nodeify(done);
   });
 
-  it('Pre post event', function(done) {
-    var request = require('request');
-    var options = {
-      uri: url + '/event?source=custom&hook=' + process.env.SAUCE_HOOK_ID,
-      headers: {
-        'Content-type': 'application/json',
-      },
-      agentOptions: {
-        rejectUnauthorized: false,
-      },
-      method: 'POST',
-      json: {
-        '@timestamp': testEventTS,
-        severity_type: 'error',
-        severity: 'Error',
-        env: process.env.NODE_ENV,
-        text: 'Event from Sauce Labs Test',
-        description: testEventDesc,
-        source: 'custom',
-      },
-    };
-
     request(options, function(error, res, body) {
       assert(!error && res.statusCode === 200);
       done();
     });
   });
 
-  it('Landing page', function(done) {
+  it('Should get the landing page', function(done) {
     browser
       .get(url)
       .title()
       .should.become('DevOps Tutorial App')
       .nodeify(done);
+  });
+
+  _.times(2, function(i) { // repeat twice
+
+    it('Verify the page content has correct application name', function(done) {
+      browser
+        .elementById("app-title")
+        .text()
+        .should.become('DevOps Tutorial App')
+        .nodeify(done);
+    });
+
+    it('Verify the page content has correct api link', function(done) {
+      browser
+        .elementById("api-url")
+        .getAttribute("href")
+        .should.become('/docs')
+        .nodeify(done);
+    });
+
   });
 
 });
