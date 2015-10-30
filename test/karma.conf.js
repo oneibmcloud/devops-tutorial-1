@@ -50,7 +50,7 @@ module.exports = function(config) {
     reporters: ['junit', 'spec', 'coverage', 'progress', 'dots'],
 
     junitReporter: {
-      outputDir: 'test',
+      outputDir: 'reports',
     },
 
     plugins: [
