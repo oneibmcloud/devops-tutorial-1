@@ -101,7 +101,7 @@ describe('tutorial (' + desired.browserName + ')', function() {
       browser
         .elementById("api-url")
         .getAttribute("href")
-        .should.become(url + '/docs')
+        .should.become(url + 'docs')
         .nodeify(done);
     });
 
