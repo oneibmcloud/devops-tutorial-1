@@ -79,12 +79,6 @@ describe('tutorial (' + desired.browserName + ')', function() {
       .nodeify(done);
   });
 
-    request(options, function(error, res, body) {
-      assert(!error && res.statusCode === 200);
-      done();
-    });
-  });
-
   it('Should get the landing page', function(done) {
     browser
       .get(url)
