@@ -21,20 +21,15 @@ gulp.task('lint', ['lint-js','lint-css', 'lint-jscs']);
 // Use jshint to check Javascript syntax
 gulp.task('lint-js', function() {
     var jshint = require('gulp-jshint');
-    var jshintXMLReporter = require('gulp-jshint-xml-file-reporter');
     var mkdirp = require('mkdirp');
     mkdirp.sync('./reports');
     return gulp.src(paths.js)
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
-    .pipe(jshint.reporter(jshintXMLReporter))
-    .pipe(jshint.reporter('fail'))
-    .on('end', jshintXMLReporter.writeFile({
-        format: 'junit',
-        filePath: './reports/jshint.xml',
-        alwaysReport: true
-    }));
+    .pipe(jshint.reporter('jshint-junit-reporter',{ outputFile: "./reports/jshint.xml"}))
+    .pipe(jshint.reporter('fail'));
 });
+
 
 // Use jscs to check for code style compliance
 gulp.task('lint-jscs', function() {
@@ -63,7 +58,7 @@ gulp.task('lint-css', function() {
           "ids":false,
           "adjoining-classes": false,
           "box-sizing": false,
-          "box-model": true,
+          "box-model": false,
           "compatible-vendor-prefixes": false,
           "font-sizes": false,
           "gradients": false,
