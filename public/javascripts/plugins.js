@@ -10,6 +10,7 @@
     'timeline', 'timelineEnd', 'timeStamp', 'trace', 'warn',
   ];
   var length = methods.length;
+  //var console = (window.console = window.console || {});
 
   while (length--) {
     method = methods[length];
