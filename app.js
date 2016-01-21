@@ -87,13 +87,3 @@ SwaggerExpress.create(config, function(err, swaggerExpress) {
   console.log('To access the api directly, try this:');
   console.log('curl http://127.0.0.1:' + port + '/applications\n');
 });
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('404 - Not Found!');
-  err.status = 404;
-  res.render('404', {
-    message: err.message,
-    error: {},
-  });
-});
