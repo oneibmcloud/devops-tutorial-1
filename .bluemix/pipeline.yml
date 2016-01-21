@@ -26,7 +26,7 @@ stages:
       	  #export PATH=/opt/IBM/node-v0.12/bin:$PATH
       	  # To use Node.js 4.2.2, uncomment the following line:
       	  #export PATH=/opt/IBM/node-v4.2/bin:$PATH
-      	  npm install
+      	   npm install
   - name: 'Run Unit Tests'
     inputs:
       - type: job
