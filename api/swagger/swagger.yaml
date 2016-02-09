@@ -82,7 +82,7 @@ paths:
         "200":
           description: Success
           schema:
-            $ref: "#/definitions/Application"
+            type: string
         # responses may fall through to errors
         default:
           description: Error
