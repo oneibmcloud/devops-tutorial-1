@@ -21,6 +21,7 @@ stages:
         build_type: npm
         script: |-
           #!/bin/bash
+          export PATH=/opt/IBM/node-v0.12/bin:$PATH
           npm install -g npm@3.7.1
           npm install
   - name: 'Run Unit Tests'
