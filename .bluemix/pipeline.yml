@@ -24,8 +24,6 @@ stages:
           export PATH=/opt/IBM/node-v0.12/bin:$PATH
           npm install -g npm@3.7.1
           npm install
-          tar -xzf node_modules.tar.gz
-          rm -rf node_modules
   - name: 'Run Unit Tests'
     inputs:
       - type: job
@@ -48,7 +46,6 @@ stages:
         type: tester
         script: |-
           #!/bin/bash
-          tar -xzf node_modules.tar.gz
           node ./node_modules/gulp/bin/gulp lint
         enable_tests: true
         test_file_pattern: 'test/*.xml'
@@ -57,7 +54,6 @@ stages:
         script: |-
           #!/bin/bash
           # Karma Unit Test, output file: test/*.xml
-          tar -xzf node_modules.tar.gz
           node ./node_modules/gulp/bin/gulp dev-karma
           # Mocha Unit Test, output file: test/*.xml
           node ./node_modules/gulp/bin/gulp dev-mocha
